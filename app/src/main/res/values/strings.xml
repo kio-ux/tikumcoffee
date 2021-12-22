@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">TikumCoffee</string>
+    <string name="app_name">Tikum Coffee</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="username">Username</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="go_to_sign_in">I already have an account, go to Sign In</string>
+    <string name="terms_conditions">Terms and Conditions Agreement</string>
+    <string name="go_login">Already has an account? Login here</string>
 </resources>
