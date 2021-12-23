@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.221875" />
-        <entry key="app/src/main/res/drawable-v24/shape_rectangle_white.xml" value="0.221875" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.221875" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.20572916666666666" />
+        <entry key="..\:/SEMUA TUGAS JIHAD/TUGAS JIHAD SMT 5/MAD/project dosen/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/SEMUA TUGAS JIHAD/TUGAS JIHAD SMT 5/MAD/project dosen/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SEMUA TUGAS JIHAD/TUGAS JIHAD SMT 5/MAD/project dosen/app/src/main/res/layout/activity_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/SEMUA TUGAS JIHAD/TUGAS JIHAD SMT 5/MAD/project dosen/app/src/main/res/layout/activity_menu_list.xml" value="0.16" />
+        <entry key="..\:/SEMUA TUGAS JIHAD/TUGAS JIHAD SMT 5/MAD/project dosen/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/SEMUA TUGAS JIHAD/TUGAS JIHAD SMT 5/MAD/project dosen/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
