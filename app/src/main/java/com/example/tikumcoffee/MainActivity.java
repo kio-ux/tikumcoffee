@@ -11,7 +11,7 @@ import com.synnapps.carouselview.ImageListener;
 public class MainActivity extends AppCompatActivity {
 
     private int[] mImages = new int[] {
-            R.drawable.test_satu, R.drawable.test_dua, R.drawable.test_empat
+            R.drawable.tikum_banner_3, R.drawable.tikum_banner_2, R.drawable.tikum_banner_1
     };
 
     @Override
