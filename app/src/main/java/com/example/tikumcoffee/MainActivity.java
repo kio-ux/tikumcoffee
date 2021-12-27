@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initialize();
     }
-    //test oik
-
     private void initialize() {
 
         CarouselView carouselView = findViewById(R.id.carousel);
