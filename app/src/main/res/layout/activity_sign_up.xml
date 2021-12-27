@@ -104,7 +104,7 @@
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/biru_tikum"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textColor="@color/biru_tikum" />
 
         <TextView
@@ -125,7 +125,7 @@
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/biru_tikum"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textColor="@color/biru_tikum" />
 
 

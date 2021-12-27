@@ -16,9 +16,9 @@ import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText et_username, et_email, et_password;
+    private EditText et_username, et_email, et_password, et_repassword;
     private CheckBox cb_agree;
-    private String username, email, password;
+    private String username, email, password, rePassword;
     private Boolean agree;
     private Button btn_signup;
     private TextView loginHere;
@@ -35,6 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
         et_username = findViewById(R.id.et_username);
         et_email = findViewById(R.id.et_email);
         et_password = findViewById(R.id.et_password);
+        et_repassword = findViewById(R.id.et_repassword);
         btn_signup = findViewById(R.id.btn_signup);
         loginHere = findViewById(R.id.tv_login_here);
         cb_agree = findViewById(R.id.cb_agree);
@@ -48,6 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
             username = et_username.getText().toString();
             email = et_email.getText().toString();
             password = et_password.getText().toString();
+            rePassword = et_repassword.getText().toString();
             agree = cb_agree.isChecked();
 
             if (username.isEmpty()) {
@@ -62,19 +64,22 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Password Must be Filled!", Toast.LENGTH_LONG).show();
             } else if (password.length() < 6) {
                 Toast.makeText(getApplicationContext(), "Password must be at least 6 characters", Toast.LENGTH_LONG).show();
+            } else if (!rePassword.equals(password)) {
+                Toast.makeText(getApplicationContext(), "Confirm password should match with password", Toast.LENGTH_LONG).show();
             } else if (!agree) {
                 Toast.makeText(getApplicationContext(), "Terms and Conditions Agreement Must be Clicked!", Toast.LENGTH_LONG).show();
             } else {
-
-                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
 
             }
         }
     }
+
     public void loginHereClick(View login){
         if (login == loginHere){
-
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+            startActivity(intent);
         }
     }
 }
