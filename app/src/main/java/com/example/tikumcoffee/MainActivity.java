@@ -1,28 +1,31 @@
 package com.example.tikumcoffee;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Fragment {
 
-    private int[] mImages = new int[] {
-            R.drawable.tikum_banner_3, R.drawable.tikum_banner_2, R.drawable.tikum_banner_1
+    private int[] mImages = new int[]{
+            R.drawable.test_dua, R.drawable.test_satu, R.drawable.test_empat
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initialize();
-    }
-    private void initialize() {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_main,container,false);
 
-        CarouselView carouselView = findViewById(R.id.carousel);
+
+        CarouselView carouselView = view.findViewById(R.id.carousel);
         carouselView.setPageCount(mImages.length);
         carouselView.setImageListener(new ImageListener() {
             @Override
@@ -32,5 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        return view;
     }
+
 }
