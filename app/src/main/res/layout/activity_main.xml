@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="264dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <GridView
+            android:id="@+id/coffeeGrid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:horizontalSpacing="24sp"
+            android:numColumns="2"
+            android:verticalSpacing="24sp" />
+    </ScrollView>
+
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carousel"
         android:layout_width="match_parent"
@@ -13,16 +33,29 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:fillColor="#FFFFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:pageColor="#FFFFFFFF"
-        app:fillColor="#FFFFFFFF"
-        app:slideInterval="3000"
         app:radius="5dp"
-        app:strokeWidth="1dp"
+        app:slideInterval="3000"
         app:strokeColor="#FF777777"
-        />
+        app:strokeWidth="1dp">
+
+    </com.synnapps.carouselview.CarouselView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Recommended"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carousel" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
