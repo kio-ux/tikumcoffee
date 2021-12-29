@@ -1,4 +1,4 @@
-package com.example.tikumcoffee;
+package com.example.tikumcoffee.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tikumcoffee.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -46,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             } else if (password.length() < 6) {
                 Toast.makeText(getApplicationContext(), "Password must be at least 6 characters", Toast.LENGTH_LONG).show();
             } else {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HomeFragment.class);
                 startActivity(intent);
             }
         }

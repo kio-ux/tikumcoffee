@@ -1,49 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <data>
+    <variable
+        name="coffee"
+        type="com.example.tikumcoffee.models.Coffee" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
-        <ImageView
-            android:id="@+id/iv_gambarMenu"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
-
-        <TextView
-            android:id="@+id/tv_namaProduk"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="nama produk"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_toEndOf="@+id/iv_gambarMenu" />
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:layout_below="@+id/tv_namaProduk"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_toEndOf="@+id/iv_gambarMenu"
-            android:text="harga produk"
-            android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/iv_gambarMenu"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_namaProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@+id/iv_gambarMenu"
+                android:text="@{coffee.coffeeName}"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/harga_produk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_namaProduk"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@+id/iv_gambarMenu"
+                android:text="@{String.valueOf(coffee.coffeePrice)}"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/addtoCart"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/harga_produk"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="601dp"
+                android:text="Add To Cart"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

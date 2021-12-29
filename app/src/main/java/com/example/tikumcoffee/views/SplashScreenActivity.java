@@ -1,10 +1,12 @@
-package com.example.tikumcoffee;
+package com.example.tikumcoffee.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.tikumcoffee.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

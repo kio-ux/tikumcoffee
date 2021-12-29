@@ -1,8 +1,10 @@
-package com.example.tikumcoffee;
+package com.example.tikumcoffee.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tikumcoffee.R;
 
 public class MenuActivity extends AppCompatActivity {
 

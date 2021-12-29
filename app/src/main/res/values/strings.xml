@@ -10,4 +10,6 @@
     <string name="go_to_sign_in">I already have an account, go to Sign In</string>
     <string name="terms_conditions">Terms and Conditions Agreement</string>
     <string name="go_login">Already has an account? Login here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,8 +1,7 @@
-package com.example.tikumcoffee;
+package com.example.tikumcoffee.views;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
@@ -12,12 +11,14 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.example.tikumcoffee.models.Coffee;
+import com.example.tikumcoffee.R;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
 import java.util.Vector;
 
-public class MainActivity extends Fragment {
+public class HomeFragment extends Fragment {
 
     Vector<Coffee> coffeeList = new Vector<>();
     GridView gridView;
@@ -32,8 +33,7 @@ public class MainActivity extends Fragment {
 
         setData();
         gridView = view.findViewById(R.id.coffeeGrid);
-        CoffeeAdapter adapter = new CoffeeAdapter(getActivity(), R.layout.coffee_item, coffeeList);
-        gridView.setAdapter(adapter);
+
 
 
         CarouselView carouselView = view.findViewById(R.id.carousel);
