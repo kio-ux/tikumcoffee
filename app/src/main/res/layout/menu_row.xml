@@ -4,14 +4,14 @@
 
     <data>
     <variable
-        name="MenuCoffee"
+        name="menuCoffee"
         type="com.example.tikumcoffee.models.MenuCoffee" />
     </data>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <ImageView
@@ -19,7 +19,8 @@
             android:layout_width="100dp"
             android:layout_height="125dp"
             app:srcCompat="@drawable/dalgona"
-            android:layout_marginLeft="15dp" />
+            android:layout_marginLeft="15dp"
+            android:menuCoffeeImage = "@{menuCoffee.imageCoffee}"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -30,7 +31,7 @@
                 android:id="@+id/namaProduk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{MenuCoffee.namaCoffee}"
+                android:text="@{menuCoffee.namaCoffee}"
                 android:layout_marginTop="8dp"
                 android:textSize="20dp"
                 android:layout_marginLeft="8dp" />
@@ -39,7 +40,7 @@
                 android:id="@+id/hargaProduk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(MenuCoffee.hargaCoffee)}"
+                android:text="@{String.valueOf(menuCoffee.hargaCoffee)}"
                 android:layout_marginTop="8dp"
                 android:textSize="16dp"
                 android:layout_marginLeft="8dp" />

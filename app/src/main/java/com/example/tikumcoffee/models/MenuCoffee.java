@@ -1,7 +1,12 @@
 package com.example.tikumcoffee.models;
 
+import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
+import androidx.databinding.BindingAdapter;
 import androidx.recyclerview.widget.DiffUtil;
+
+import com.bumptech.glide.Glide;
 
 import java.util.Objects;
 
@@ -79,6 +84,14 @@ public class MenuCoffee {
             return oldItem.equals(newItem);
         }
     };
+
+    @BindingAdapter("android:menuCoffeeImage")
+    public  static void loadImage(ImageView imageView, String ImageCoffee) {
+        Glide.with(imageView)
+                .load(ImageCoffee)
+                .fitCenter()
+                .into(imageView);
+    }
 
 
 }
