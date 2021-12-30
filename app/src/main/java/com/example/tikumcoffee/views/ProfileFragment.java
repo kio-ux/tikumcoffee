@@ -31,7 +31,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         logoutButton.setOnClickListener(this);
 
 
-        // Inflate the layout for this fragment
+
         return view;
     }
 

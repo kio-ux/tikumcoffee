@@ -22,9 +22,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.MenuActivity"
-            android:exported="true" />
-        <activity
             android:name=".views.LoginActivity"
             android:exported="false" />
         <activity
