@@ -3,15 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-    <variable
-        name="menuCoffee"
-        type="com.example.tikumcoffee.models.MenuCoffee" />
+        <variable
+            name="menuCoffee"
+            type="com.example.tikumcoffee.models.MenuCoffee" />
+        
+        <variable
+            name="menuInterface"
+            type="com.example.tikumcoffee.adapters.MenuListAdapter.MenuInterface" />
+        
     </data>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> menuInterface.onItemClick(menuCoffee)}">
 
 
         <ImageView
