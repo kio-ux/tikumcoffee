@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "880932792324",
+    "project_id": "tikumcoffee-4fe0e",
+    "storage_bucket": "tikumcoffee-4fe0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880932792324:android:6f6f0c7f38b17cdeb4ad51",
+        "android_client_info": {
+          "package_name": "com.example.tikumcoffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880932792324-aojf6j1pvmbu6mcbpbq7d60v72qtivgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsHph_sPY-4E96ofa_aLZLl9oLsJ1GUW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880932792324-aojf6j1pvmbu6mcbpbq7d60v72qtivgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
