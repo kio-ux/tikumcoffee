@@ -71,12 +71,12 @@ public class MenuFragment extends Fragment implements MenuListAdapter.MenuInterf
 
     @Override
     public void addItem(MenuCoffee menuCoffee) {
-
+        boolean isAdded = menuViewModel.addItemToCart(menuCoffee);
+        Log.d(TAG, "addItem: "+menuCoffee.getNamaCoffee() + isAdded);
     }
 
     @Override
     public void onItemClick(MenuCoffee menuCoffee) {
-        Log.d(TAG, "onItemClick: " + menuCoffee.toString());
         menuViewModel.setMenuCoffee(menuCoffee);
         navController.navigate(R.id.action_menuFragment2_to_menuDetailFragment);
     }

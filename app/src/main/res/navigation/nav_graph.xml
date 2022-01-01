@@ -46,6 +46,6 @@
     <fragment
         android:id="@+id/menuDetailFragment"
         android:name="com.example.tikumcoffee.views.MenuDetailFragment"
-        android:label="fragment_menu_detail"
+        android:label="Menu Detail"
         tools:layout="@layout/fragment_menu_detail" />
 </navigation>

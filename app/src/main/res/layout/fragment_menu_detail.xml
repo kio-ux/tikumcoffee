@@ -92,6 +92,7 @@
                 android:paddingRight="25dp"
                 android:text="Add to Cart"
                 android:textSize="12dp"
+                android:onClick="@{()-> menuViewModel.addItemToCart(menuViewModel.menuCoffee)}"
                 android:textColor="@color/white"/>
         </LinearLayout>
 
