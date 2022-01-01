@@ -15,12 +15,14 @@ public class MenuCoffee {
     private String namaCoffee;
     private double hargaCoffee;
     private String imageCoffee;
+    private String descCoffee;
 
-    public MenuCoffee(String id, String namaCoffee, double hargaCoffee, String imageCoffee) {
+    public MenuCoffee(String id, String namaCoffee, double hargaCoffee, String imageCoffee, String descCoffee) {
         this.id = id;
         this.namaCoffee = namaCoffee;
         this.hargaCoffee = hargaCoffee;
         this.imageCoffee = imageCoffee;
+        this.descCoffee = descCoffee;
     }
 
     @Override
@@ -30,6 +32,7 @@ public class MenuCoffee {
                 ", namaCoffee='" + namaCoffee + '\'' +
                 ", hargaCoffee=" + hargaCoffee +
                 ", imageCoffee='" + imageCoffee + '\'' +
+                ", descCoffee=' " + descCoffee +
                 '}';
     }
 
@@ -65,12 +68,16 @@ public class MenuCoffee {
         this.imageCoffee = imageCoffee;
     }
 
+    public String getDescCoffee() { return descCoffee; }
+
+    public void setDescCoffee(String descCoffee) { this.descCoffee = descCoffee; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MenuCoffee that = (MenuCoffee) o;
-        return Double.compare(that.getHargaCoffee(), getHargaCoffee()) == 0 && getId().equals(that.getId()) && getNamaCoffee().equals(that.getNamaCoffee()) && getImageCoffee().equals(that.getImageCoffee());
+        return Double.compare(that.getHargaCoffee(), getHargaCoffee()) == 0 && getId().equals(that.getId()) && getNamaCoffee().equals(that.getNamaCoffee()) && getImageCoffee().equals(that.getImageCoffee()) && getDescCoffee().equals(that.getDescCoffee());
     }
 
     public static DiffUtil.ItemCallback<MenuCoffee> itemCallback = new DiffUtil.ItemCallback<MenuCoffee>() {

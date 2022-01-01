@@ -12,10 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
+//import com.google.firebase.auth.AuthResult;
+//import com.google.firebase.auth.FirebaseAuth;
 
 
 import com.example.tikumcoffee.R;
@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView registerHere;
     private Button btn_login;
     private String email, password;
-    private FirebaseAuth mAuth;
+//    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         initialize();
-        mAuth = FirebaseAuth.getInstance();
+//        mAuth = FirebaseAuth.getInstance();
     }
 
     private void initialize() {
@@ -77,17 +77,17 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Password must be at least 6 characters", Toast.LENGTH_LONG).show();
         }
 
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                }
-                else {
-                    Toast.makeText(LoginActivity.this, "Login failed! Check your credentials.", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+//        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if (task.isSuccessful()){
+//                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+//                }
+//                else {
+//                    Toast.makeText(LoginActivity.this, "Login failed! Check your credentials.", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
 
     }
 
