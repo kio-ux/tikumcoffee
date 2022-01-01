@@ -35,6 +35,7 @@ public class MenuListAdapter extends ListAdapter<MenuCoffee, MenuListAdapter.Men
 
         MenuCoffee menuCoffee = getItem(position);
         holder.menuRowBinding.setMenuCoffee(menuCoffee);
+        holder.menuRowBinding.executePendingBindings();
     }
 
     class MenuViewHolder extends RecyclerView.ViewHolder{

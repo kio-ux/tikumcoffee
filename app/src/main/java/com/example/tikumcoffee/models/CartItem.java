@@ -1,5 +1,11 @@
 package com.example.tikumcoffee.models;
 
+import android.widget.Spinner;
+
+import androidx.annotation.NonNull;
+import androidx.databinding.BindingAdapter;
+import androidx.recyclerview.widget.DiffUtil;
+
 import java.util.Objects;
 
 public class CartItem {
@@ -43,5 +49,21 @@ public class CartItem {
         CartItem cartItem = (CartItem) o;
         return getQuantity() == cartItem.getQuantity() && getMenuCoffee().equals(cartItem.getMenuCoffee());
     }
+    @BindingAdapter("android:setValue")
+    public static void getSelectedSpinnerValue(Spinner spinner,int quantity){
+        spinner.setSelection(quantity -1, true);
+    }
+
+    public static DiffUtil.ItemCallback<CartItem> itemCallback = new DiffUtil.ItemCallback<CartItem>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull CartItem oldItem, @NonNull CartItem newItem) {
+            return oldItem.getMenuCoffee().equals(newItem.getMenuCoffee());
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull CartItem oldItem, @NonNull CartItem newItem) {
+            return oldItem.equals(newItem);
+        }
+    };
 
 }

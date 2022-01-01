@@ -22,6 +22,7 @@ import com.example.tikumcoffee.databinding.FragmentMenuBinding;
 import com.example.tikumcoffee.models.Coffee;
 import com.example.tikumcoffee.models.MenuCoffee;
 import com.example.tikumcoffee.viewmodels.MenuViewModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -72,7 +73,16 @@ public class MenuFragment extends Fragment implements MenuListAdapter.MenuInterf
     @Override
     public void addItem(MenuCoffee menuCoffee) {
         boolean isAdded = menuViewModel.addItemToCart(menuCoffee);
-        Log.d(TAG, "addItem: "+menuCoffee.getNamaCoffee() + isAdded);
+        if (isAdded){
+            Snackbar.make(requireView(), menuCoffee.getNamaCoffee()+"Added to Cart", Snackbar.LENGTH_LONG).setAction("Checkout", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    navController.navigate(R.id.action_menuFragment2_to_cartFragment2);
+                }
+            }).show();
+        }else{
+            Snackbar.make(requireView(), "Already Max Quantity", Snackbar.LENGTH_LONG).show();
+        }
     }
 
     @Override

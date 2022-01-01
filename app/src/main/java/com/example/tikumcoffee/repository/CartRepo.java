@@ -31,6 +31,22 @@ public class CartRepo {
             initCart();
         }
         List<CartItem> cartItemList = new ArrayList<>(mutableCart.getValue());
+        for (CartItem cartItem : cartItemList){
+            if (cartItem.getMenuCoffee().getId().equals(menuCoffee.getId())){
+                if (cartItem.getQuantity()==10){
+                    return false;
+                }
+
+                int index = cartItemList.indexOf(cartItem);
+                cartItem.setQuantity(cartItem.getQuantity()+1);
+                cartItemList.set(index,cartItem);
+
+                mutableCart.setValue(cartItemList);
+
+                return true;
+
+            }
+        }
 
         CartItem cartItem = new CartItem(menuCoffee,1);
         cartItemList.add(cartItem);

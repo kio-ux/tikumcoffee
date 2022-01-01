@@ -22,7 +22,11 @@
     <fragment
         android:id="@+id/cartFragment2"
         android:name="com.example.tikumcoffee.views.CartFragment"
-        android:label="Cart" />
+        android:label="Cart" >
+        <action
+            android:id="@+id/action_cartFragment2_to_menuFragment2"
+            app:destination="@id/menuFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/menuFragment2"
         android:name="com.example.tikumcoffee.views.MenuFragment"
@@ -47,5 +51,9 @@
         android:id="@+id/menuDetailFragment"
         android:name="com.example.tikumcoffee.views.MenuDetailFragment"
         android:label="Menu Detail"
-        tools:layout="@layout/fragment_menu_detail" />
+        tools:layout="@layout/fragment_menu_detail" >
+        <action
+            android:id="@+id/action_menuDetailFragment_to_menuFragment2"
+            app:destination="@id/menuFragment2" />
+    </fragment>
 </navigation>
