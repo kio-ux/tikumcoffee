@@ -1,6 +1,7 @@
 package com.example.tikumcoffee.views;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
+import com.example.tikumcoffee.R;
 import com.example.tikumcoffee.adapters.CoffeeAdapter;
 import com.example.tikumcoffee.adapters.MenuListAdapter;
 import com.example.tikumcoffee.databinding.FragmentMenuBinding;
@@ -23,9 +27,11 @@ import java.util.List;
 
 public class MenuFragment extends Fragment implements MenuListAdapter.MenuInterface {
 
+    private static final String TAG = "MenuFragment";
     FragmentMenuBinding fragmentMenuBinding;
-    MenuListAdapter menuListAdapter;
-    MenuViewModel menuViewModel;
+    private MenuListAdapter menuListAdapter;
+    private MenuViewModel menuViewModel;
+    private NavController navController;
 
 
     public MenuFragment(){
@@ -47,7 +53,7 @@ public class MenuFragment extends Fragment implements MenuListAdapter.MenuInterf
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        menuListAdapter = new MenuListAdapter();
+        menuListAdapter = new MenuListAdapter(this);
         fragmentMenuBinding.menuRecyclerView.setAdapter(menuListAdapter);
         fragmentMenuBinding.menuRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
         fragmentMenuBinding.menuRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL));
@@ -59,6 +65,8 @@ public class MenuFragment extends Fragment implements MenuListAdapter.MenuInterf
                 menuListAdapter.submitList(menuCoffees);
             }
         });
+
+        navController = Navigation.findNavController(view);
     }
 
     @Override
@@ -68,6 +76,8 @@ public class MenuFragment extends Fragment implements MenuListAdapter.MenuInterf
 
     @Override
     public void onItemClick(MenuCoffee menuCoffee) {
-
+        Log.d(TAG, "onItemClick: " + menuCoffee.toString());
+        menuViewModel.setMenuCoffee(menuCoffee);
+        navController.navigate(R.id.action_menuFragment2_to_menuDetailFragment);
     }
 }

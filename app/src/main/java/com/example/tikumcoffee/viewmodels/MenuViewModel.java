@@ -1,6 +1,7 @@
 package com.example.tikumcoffee.viewmodels;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.tikumcoffee.models.MenuCoffee;
@@ -12,8 +13,15 @@ public class MenuViewModel extends ViewModel {
 
     MenuRepo menuRepo = new MenuRepo();
 
-    public LiveData<List<MenuCoffee>> getProducts() {
+    MutableLiveData<MenuCoffee> mutableMenuCoffee = new MutableLiveData<>();
 
-        return menuRepo.getMenuCoffees();
+    public LiveData<List<MenuCoffee>> getProducts() { return menuRepo.getMenuCoffees(); }
+
+    public  void  setMenuCoffee(MenuCoffee menuCoffee) {
+        mutableMenuCoffee.setValue(menuCoffee);
+    }
+
+    public LiveData<MenuCoffee> getMenuCoffee() {
+        return mutableMenuCoffee;
     }
 }

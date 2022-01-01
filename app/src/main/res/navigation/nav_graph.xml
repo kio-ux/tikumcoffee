@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_menuFragment2_to_cartFragment2"
             app:destination="@id/cartFragment2" />
+        <action
+            android:id="@+id/action_menuFragment2_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -40,4 +43,9 @@
             android:id="@+id/action_profileFragment_to_mainActivity2"
             app:destination="@id/mainActivity2" />
     </fragment>
+    <fragment
+        android:id="@+id/menuDetailFragment"
+        android:name="com.example.tikumcoffee.views.MenuDetailFragment"
+        android:label="fragment_menu_detail"
+        tools:layout="@layout/fragment_menu_detail" />
 </navigation>

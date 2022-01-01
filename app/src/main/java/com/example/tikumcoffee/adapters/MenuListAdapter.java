@@ -14,8 +14,10 @@ import com.example.tikumcoffee.models.MenuCoffee;
 
 public class MenuListAdapter extends ListAdapter<MenuCoffee, MenuListAdapter.MenuViewHolder> {
 
-    public MenuListAdapter() {
+    MenuInterface menuInterface;
+    public MenuListAdapter(MenuInterface menuInterface) {
         super(MenuCoffee.itemCallback);
+        this.menuInterface = menuInterface;
     }
 
     @NonNull
@@ -23,7 +25,7 @@ public class MenuListAdapter extends ListAdapter<MenuCoffee, MenuListAdapter.Men
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         MenuRowBinding menuRowBinding = MenuRowBinding.inflate(layoutInflater,parent,false);
-
+        menuRowBinding.setMenuInterface(menuInterface);
 
         return new MenuViewHolder(menuRowBinding);
     }
@@ -42,7 +44,8 @@ public class MenuListAdapter extends ListAdapter<MenuCoffee, MenuListAdapter.Men
 
         public MenuViewHolder(MenuRowBinding binding) {
             super(binding.getRoot());
-            menuRowBinding = binding;
+            this.menuRowBinding = binding;
+
         }
     }
     public interface MenuInterface{
