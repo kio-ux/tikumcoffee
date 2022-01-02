@@ -47,4 +47,7 @@ public class MenuViewModel extends ViewModel {
     public LiveData<Double> getTotalPrice(){
         return cartRepo.getTotalPrice();
     }
+    public void resetCart(){
+        cartRepo.initCart();
+    }
 }

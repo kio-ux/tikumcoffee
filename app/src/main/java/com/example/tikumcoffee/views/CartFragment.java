@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
 import com.example.tikumcoffee.R;
@@ -26,11 +28,14 @@ public class CartFragment extends Fragment implements CartListAdapter.CartInterf
 
     MenuViewModel menuViewModel;
     FragmentCartBinding fragmentCartBinding;
+    NavController navController;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart,container,false);
+
+        navController = Navigation.findNavController(view);
 
         fragmentCartBinding = FragmentCartBinding.inflate(inflater,container,false);
         return fragmentCartBinding.getRoot();
@@ -50,12 +55,20 @@ public class CartFragment extends Fragment implements CartListAdapter.CartInterf
             @Override
             public void onChanged(List<CartItem> cartItems) {
               cartListAdapter.submitList(cartItems);
+              fragmentCartBinding.btnAddToCart.setEnabled(cartItems.size()>0);
             }
         });
         menuViewModel.getTotalPrice().observe(getViewLifecycleOwner(), new Observer<Double>() {
             @Override
             public void onChanged(Double aDouble) {
                 fragmentCartBinding.TotalOrder.setText("Total : Rp"+aDouble.toString());
+            }
+        });
+
+        fragmentCartBinding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_cartFragment2_to_fragmentCheckout);
             }
         });
     }

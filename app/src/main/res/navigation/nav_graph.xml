@@ -11,13 +11,16 @@
         tools:layout="@layout/activity_main" >
         <action
             android:id="@+id/action_mainActivity2_to_menuFragment2"
-            app:destination="@id/menuFragment2" />
+            app:destination="@id/menuFragment2"
+            app:popUpTo="@id/mainActivity2" />
         <action
             android:id="@+id/action_mainActivity2_to_cartFragment2"
-            app:destination="@id/cartFragment2" />
+            app:destination="@id/cartFragment2"
+            app:popUpTo="@id/mainActivity2" />
         <action
             android:id="@+id/action_mainActivity2_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/mainActivity2" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment2"
@@ -25,7 +28,12 @@
         android:label="Cart" >
         <action
             android:id="@+id/action_cartFragment2_to_menuFragment2"
-            app:destination="@id/menuFragment2" />
+            app:destination="@id/menuFragment2"
+            app:popUpTo="@id/menuFragment2" />
+        <action
+            android:id="@+id/action_cartFragment2_to_fragmentCheckout"
+            app:destination="@id/fragmentCheckout"
+            app:popUpTo="@id/cartFragment2" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment2"
@@ -33,10 +41,12 @@
         android:label="Menu" >
         <action
             android:id="@+id/action_menuFragment2_to_cartFragment2"
-            app:destination="@id/cartFragment2" />
+            app:destination="@id/cartFragment2"
+            app:popUpTo="@id/menuFragment2" />
         <action
             android:id="@+id/action_menuFragment2_to_menuDetailFragment"
-            app:destination="@id/menuDetailFragment" />
+            app:destination="@id/menuDetailFragment"
+            app:popUpTo="@id/menuFragment2" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -55,5 +65,14 @@
         <action
             android:id="@+id/action_menuDetailFragment_to_menuFragment2"
             app:destination="@id/menuFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCheckout"
+        android:name="com.example.tikumcoffee.views.FragmentCheckout"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_fragmentCheckout_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
     </fragment>
 </navigation>
