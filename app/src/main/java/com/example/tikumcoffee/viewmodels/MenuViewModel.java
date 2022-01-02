@@ -38,4 +38,13 @@ public class MenuViewModel extends ViewModel {
     public boolean addItemToCart(MenuCoffee menuCoffee){
         return  cartRepo.addItemToCart(menuCoffee);
     }
+    public void removeItemFromCart(CartItem cartItem){
+        cartRepo.removeItemFromCart(cartItem);
+    }
+    public void changeQuantity(CartItem cartItem, int quantity){
+        cartRepo.changeQuantity(cartItem,quantity);
+    }
+    public LiveData<Double> getTotalPrice(){
+        return cartRepo.getTotalPrice();
+    }
 }

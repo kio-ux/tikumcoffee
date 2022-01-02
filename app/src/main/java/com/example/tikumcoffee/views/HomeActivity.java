@@ -58,4 +58,10 @@ public class HomeActivity extends AppCompatActivity {
         NavigationUI.onNavDestinationSelected(item, navController);
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        navController.navigateUp();
+        return super.onSupportNavigateUp();
+    }
 }
