@@ -35,7 +35,7 @@ public class CartFragment extends Fragment implements CartListAdapter.CartInterf
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart,container,false);
 
-        navController = Navigation.findNavController(view);
+
 
         fragmentCartBinding = FragmentCartBinding.inflate(inflater,container,false);
         return fragmentCartBinding.getRoot();
